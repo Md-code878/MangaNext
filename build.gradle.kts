@@ -1,18 +1,22 @@
 plugins {
-    kotlin("jvm") version "1.9.20"
-    id("io.ktor.plugin") version "2.3.5"
+    // Upgrading Kotlin to 1.9.22+ and Ktor to 2.3.12+ 
+    // these are more stable with Gradle 8.x
+    kotlin("jvm") version "1.9.22"
+    id("io.ktor.plugin") version "2.3.12"
 }
 
 repositories {
     mavenCentral()
-    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-core:2.3.5")
-    implementation("io.ktor:ktor-server-netty:2.3.5")
-    implementation("io.ktor:ktor-server-html-builder:2.3.5")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-    // Placeholder for Mihon/Tachiyomi Extension Libs
-    implementation("org.slf4j:slf4j-simple:2.0.7")
+    implementation("io.ktor:ktor-server-core:2.3.12")
+    implementation("io.ktor:ktor-server-netty:2.3.12")
+    implementation("io.ktor:ktor-server-html-builder:2.3.12")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    implementation("org.slf4j:slf4j-simple:2.0.9")
+}
+
+application {
+    mainClass.set("com.manganext.MainKt")
 }
