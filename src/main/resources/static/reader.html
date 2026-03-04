@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaNext - Reader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #000; margin: 0; }
+        .manga-page { width: 100%; display: block; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+    <div id="reader-container" class="flex flex-col items-center">
+        </div>
+
+    <script>
+        // Mocking chapter image loading
+        const container = document.getElementById('reader-container');
+        for(let i = 1; i <= 5; i++) {
+            const img = document.createElement('img');
+            img.className = 'manga-page';
+            img.src = '/api/proxy/page/' + i; // In reality, this proxies through the server
+            img.alt = 'Loading page...';
+            container.appendChild(img);
+        }
+    </script>
+</body>
+</html>
