@@ -1,8 +1,11 @@
 plugins {
-    // Upgrading Kotlin to 1.9.22+ and Ktor to 2.3.12+ 
-    // these are more stable with Gradle 8.x
     kotlin("jvm") version "1.9.22"
     id("io.ktor.plugin") version "2.3.12"
+}
+
+// Fix for Gradle 8+ Shadow plugin compatibility
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    archiveClassifier.set("all")
 }
 
 repositories {
